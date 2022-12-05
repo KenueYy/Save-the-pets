@@ -7,7 +7,7 @@ namespace Utils.ObjectPooller {
         public T prefab { get; }
         public bool autoExpand { get; set; }
         public Transform container { get; }
-        private List<T> pool;
+        private List<T> _pool;
 
         public Pool(T prefab, int count, Transform container, bool autoExpand) {
             this.prefab = prefab;
@@ -16,7 +16,7 @@ namespace Utils.ObjectPooller {
             CreatePool(count);
         }
         private void CreatePool(int count) {
-            this.pool = new List<T>();
+            this._pool = new List<T>();
             for (int number = 0; number < count; number++) {
                 CreateObject();
             }
@@ -24,11 +24,11 @@ namespace Utils.ObjectPooller {
         private T CreateObject(bool isActive = false) {
             var createdObject = Object.Instantiate(this.prefab, this.container);
             createdObject.gameObject.SetActive(isActive);
-            pool.Add(createdObject);
+            _pool.Add(createdObject);
             return createdObject;
         }
         private bool HasFreeElement(out T element) {
-            foreach (var Object in pool) {
+            foreach (var Object in _pool) {
                 if (!Object.gameObject.activeInHierarchy) {
                     element = Object;
                     return true;
