@@ -21,8 +21,14 @@ namespace Entity.Pets.Controllers {
         }
 
         private void Damage(Collision2D entity) {
-            //TODO Получать компонент с уроном из коллайдера атакующего 
-            _currentHealth -= 10;
+            //TODO Получать компонент с уроном из коллайдера атакующего
+            
+            var enemy = entity.gameObject.GetComponent<IDamageDealer>();
+            if (enemy == null) {
+                return;
+            }
+
+            _currentHealth -= enemy.GetDamage();
         }
 
         private void Awake() {
