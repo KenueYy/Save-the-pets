@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bee
   m_EditorClassIdentifier: 
   Damage: 4
-  Speed: 7
+  MovementSpeed: 9
+  RotationSpeed: 5
