@@ -2,6 +2,7 @@ using Entity.Enemy.Controllers;
 using Entity.Enemy.Interfaces;
 using Entity.Enemy.Scriptable;
 using UnityEngine;
+using GameManagers;
 
 namespace Entity.Enemy {
 
