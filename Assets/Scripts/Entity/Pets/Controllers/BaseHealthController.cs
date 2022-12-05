@@ -1,4 +1,5 @@
-﻿using Entity.Pets.Interfaces;
+﻿using Entity.Enemy.Interfaces;
+using Entity.Pets.Interfaces;
 using UnityEngine;
 
 namespace Entity.Pets.Controllers {

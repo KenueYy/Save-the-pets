@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2544d30534062ec4bbc4a9be17d75c09, type: 3}
   m_Name: Bee
   m_EditorClassIdentifier: 
-  Damage: 0
+  Damage: 4
+  Speed: 7
