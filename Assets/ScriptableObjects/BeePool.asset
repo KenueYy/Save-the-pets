@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f59e68b8bf712c40a4b8a74926a09a3, type: 3}
   m_Name: BeePool
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  poolCount: 0
-  autoExpand: 0
+  prefab: {fileID: 6679457083734734834, guid: 47593b3b691e5454db4d6f722cddb664, type: 3}
+  poolCount: 20
+  autoExpand: 1

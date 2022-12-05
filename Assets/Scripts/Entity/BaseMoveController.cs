@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class BaseMoveController : MonoBehaviour
 {
-    private float _speed;
+    private float _movementSpeed;
+    private float _rotateSpeed= 5;
 
     private GameObject _target;
     private GameObject _moveObject;
+    private Rigidbody2D _rb => GetComponentInParent<Rigidbody2D>();
 
     private void Update() {
-        _moveObject.transform.position = Vector2.MoveTowards(transform.position, _target.transform.position, _speed * Time.deltaTime);
+        Vector2 direction = _target.transform.position - _moveObject.transform.position;
+
+        _rb.AddForce(direction * _movementSpeed * Time.deltaTime, ForceMode2D.Impulse);
+        _moveObject.transform.right = Vector2.MoveTowards(_moveObject.transform.right, direction, Time.deltaTime * _rotateSpeed);
     }
 
     public void Initialize(GameObject moveObject,GameObject target, float speed) {
         _target = target;
-        _speed = speed;
+        _movementSpeed = speed;
         _moveObject = moveObject;
     }
 

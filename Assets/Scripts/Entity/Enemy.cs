@@ -1,3 +1,4 @@
+using Entity.Pets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,6 @@ public class Enemy : MonoBehaviour, IDamageDealer {
 
     [SerializeField]
     private EnemyObject data;
-
-    [SerializeField]
-    private GameObject _target;
 
     private float _damage => data.Damage;
     private float _speed => data.Speed;
@@ -24,12 +22,13 @@ public class Enemy : MonoBehaviour, IDamageDealer {
 
 #endregion
 
-    private void Awake() {
-        Initialize();
+    private void OnEnable() {
+        GameObject target = LevelManager.instance.GetPet();
+        Initialize(target);
     }
 
-    private void Initialize() {
-        _moveController.Initialize(gameObject, _target, _speed);
+    private void Initialize(GameObject target) {
+        _moveController.Initialize(gameObject, target, _speed);
     }
 
 }

@@ -148,8 +148,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 154707548404948457}
   edgeCollider: {fileID: 2166938801182181575}
   rigidBody: {fileID: 1535320274103683763}
-  points: []
-  pointsCount: 0
+  pointsMinDistance: 0.1
 --- !u!50 &1535320274103683763
 Rigidbody2D:
   serializedVersion: 4
@@ -169,7 +168,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!68 &2166938801182181575
 EdgeCollider2D:
