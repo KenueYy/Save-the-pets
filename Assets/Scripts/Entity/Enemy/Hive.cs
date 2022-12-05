@@ -12,9 +12,14 @@ namespace Entity.Enemy {
 
         private void Start() {
             Spawner.instance.PreparationPool(poolObject);
-            StartCoroutine(nameof(SpawnCorutine));
+            
         }
 
+        private void Update() {
+            if (Input.GetKeyDown("1")) {
+                StartCoroutine(nameof(SpawnCorutine));
+            }
+        }
         private IEnumerator SpawnCorutine() {
             for (uint i = 0; i < poolObject.poolCount; i++) {
                 Spawner.instance.SpawnObject(poolObject);
