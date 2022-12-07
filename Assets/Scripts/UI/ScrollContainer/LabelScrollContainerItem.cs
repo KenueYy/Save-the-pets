@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Enums;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

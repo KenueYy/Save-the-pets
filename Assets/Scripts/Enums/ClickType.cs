@@ -1,4 +1,4 @@
-﻿
+﻿namespace Enums {
     internal enum ClickType {
         /// <summary>
         /// Обычный клик.
@@ -10,4 +10,5 @@
         /// </summary>
         Hold
     }
+}
 
