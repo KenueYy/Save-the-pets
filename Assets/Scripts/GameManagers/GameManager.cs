@@ -9,8 +9,6 @@ namespace GameManagers {
     internal class GameManager : MonoBehaviour, ILevelList, ILoadLevel {
         [SerializeField]
         private List<GameObject> levels = new List<GameObject>();
-
-        private LevelClickCallback _levelClickCallback => FindObjectOfType<LevelClickCallback>();
         private SceneLoader _sceneLoader => GetComponentInChildren<SceneLoader>();
 
         private int _loadLevel;
@@ -32,23 +30,17 @@ namespace GameManagers {
         public int GetLoadedLevel() {
             return _loadLevel;
         }
-
-        #endregion
-
-        private void LoadLevel(int level) {
+        public void LoadLevel(int level) {
             _loadLevel = level;
             _sceneLoader.LoadSceneIfNeeded(Scenes.Game);
         }
 
+        #endregion
+
         #region Monobehaviour
 
         private void Awake() {
-            _levelClickCallback.onLevelClicked += LoadLevel;
             DontDestroyOnLoad(gameObject);
-        }
-
-        private void OnDestroy() {
-            _levelClickCallback.onLevelClicked -= LoadLevel;
         }
 
         #endregion
