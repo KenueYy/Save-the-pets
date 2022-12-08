@@ -12,6 +12,7 @@ namespace UI.LevelList {
 
         private void Action(int index) {
             Debug.Log($"Загружаю {index} уровень");
+
         }
     }
 }
